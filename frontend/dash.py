@@ -10,7 +10,7 @@ nl_query = st.text_input("Ask a question about your survey data:")
 
 if st.button("Generate SQL"):
     try:
-        res = requests.post("http://localhost:8000/query", json={"query": nl_query})
+        res = requests.post("http://34.55.42.86:8000/query", json={"query": nl_query})
         if res.status_code == 200:
             data = res.json()
             st.code(data["sql"], language="sql")
